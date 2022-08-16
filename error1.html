@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <form>
+                Birth Year:
+                <br>
+                <input type="text" name="birthYear">
+                <br>
+                Current Year:
+                <br>
+                <input type="text" name="currentYear">
+            </form>
+            <button onclick="calculateAge()">Calculate Age</button>
+            <div id="output"></div>
+
+
+
+<script>
+    function calculateAge() {
+    var ghF = document.querySelector('[name="birthYear"]').value;
+    var xhF = document.querySelector('[name="currentYear"]').value;
+    document.getElementById("output").innerHTML = "You are either "+(xhF - ghF)+" or "+(xhF - ghF + 1)
+
+    if ((ghF) || (xhF) !== "number") {
+        confirm("Invalid, please try again")
+    }
+    };
+    </script>

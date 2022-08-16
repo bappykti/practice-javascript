@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    <section id="first-section">
+        <main id="first-main-part">
+            <h1 id="heading-1">DOM is just about to began</h1>
+            <p id="para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis repellendus officiis dignissimos adipisci! Dolorem, voluptas culpa laborum earum esse ea. Unde perferendis quo aliquam exercitationem!</p>
+            <ul id="list-items">
+                <li id="item-1">Hello Bappy</li>
+                <li id="item-2">Hello Mimi</li>
+                <li id="item-3">Hello Rabbi</li>
+                <li id="item-4">Hello Biplob</li>
+                <li id="item-5">Hello Uncle</li>
+                <li id="item-6">Hello Bulbul</li>
+            </ul>
+        </main>
+        <button id="btn-bg">Click here for color change</button>
+        <br>
+        <br>
+        <input id="input-field" type="text">
+    </section>
+    <script>
+        // document.getElementById('first-section').addEventListener('click',function(){
+        //     console.log('Section is Clicked');
+        // })
+        // document.getElementById('first-main-part').addEventListener('click',function(){
+        //     console.log('First Main Part hahahaha');
+        // })
+        // document.getElementById('heading-1').addEventListener('click',function(){
+        //     console.log('Heading is just clicked few seconds ago');
+        // })
+        // document.getElementById('para-1').addEventListener('click',function(){
+        //     console.log('Paragraph is not ok');
+        // })
+        // document.getElementById('list-items').addEventListener('click',function(){
+        //     console.log('UL is just ok');
+        // })
+        // document.getElementById('item-3').addEventListener('click',function(){
+        //     console.log('LI Item-3 is just clicked');
+        // })
+        // document.getElementById('btn-bg').addEventListener('click', function (){
+        //     document.body.style.backgroundColor = 'gray';
+        // })
+        // document.getElementById('input-field').addEventListener('keydown', function(event){
+        //     console.log(event.target.value);
+        // })
+        // document.getElementById('input-field').addEventListener('keypress', function(event){
+        //     console.log(event.target.value);
+        // })
+        document.getElementById('input-field').addEventListener('keyup', function(event){
+            console.log(event.target.value);
+        })
+
+        // function paraClicked(){
+        //     console.log("Paragraph is just clicked");
+        // }
+    </script>
+</body>
+</html>
