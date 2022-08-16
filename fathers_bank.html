@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Father's Bank</title>
+</head>
+<body>
+    <h1>this is my Father's Bank</h1>
+    <section>
+        <div>
+            <h4>Deposit</h4>
+            <h2>$<span id="total-deposit">00</span></h2>
+        </div>
+        <div>
+            <h4>Withdraw</h4>
+            <h2>$<span>00</span></h2>
+        </div>
+        <div>
+            <h4>Balance</h4>
+            <h2>$<span>1240</span></h2>
+        </div>
+    </section>
+    <section>
+        <div>
+            <input id="current-deposit-amount" type="text" placeholder="Enter Deposit Amount">
+            <button id="btn-deposit">Deposit</button>
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Enter Withdraw Amount">
+            <button id="btn-withdraw">Withdraw</button>
+        </div>
+    </section>
+    <script>
+        document.getElementById('btn-deposit').addEventListener('click', function(){
+            // console.log("i am just clicked");
+            const currentDeposit = document.getElementById('current-deposit-amount');
+            const currentDepositAmount = currentDeposit.value;
+            const currentDepositAmountString = parseFloat(currentDepositAmount);
+            // console.log(typeof currentDepositAmountString);
+            const totalDeposit = document.getElementById('total-deposit');
+            const totalDepositAmount = totalDeposit.innerText;
+            // console.log(typeof totalDepositAmount);
+            const totalDepositAmountString = parseFloat(totalDepositAmount);
+            // console.log(typeof totalDepositAmountString);
+
+            const finalDepositAmount = totalDepositAmountString + currentDepositAmountString;
+            
+            totalDeposit.innerText = finalDepositAmount;
+
+            currentDeposit.value = '';
+
+        })
+    </script>
+</body>
+</html>
