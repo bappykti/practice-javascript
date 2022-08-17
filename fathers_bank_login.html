@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Login Interface</title>
+</head>
+<body>
+    <h1>Bank owned by My Father</h1>
+    <section>
+        <input id="email-field" type="email" placeholder="Enter your email">
+        <input id="password-field" type="password" placeholder="Enter your password">
+        <button id="btn-login" type="submit">Login</button>
+    </section>
+    <script>
+        document.getElementById('btn-login').addEventListener('click', function (){
+            // console.log("i am just clicked");
+            const emailField = document.getElementById('email-field');
+            const emailFieldValue = emailField.value;
+            // console.log(emailFieldValue);
+            const passwordField = document.getElementById('password-field');
+            const passwordFieldValue = passwordField.value;
+            // console.log(emailFieldValue, passwordFieldValue);
+            if(emailFieldValue === 'bappykti@gmail.com' && passwordFieldValue === 'bappy'){
+                window.location.href = 'fathers_bank.html';
+            }
+            else{
+                alert ('invalid user id or password');
+            }
+        })
+    </script>
+</body>
+</html>

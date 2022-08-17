@@ -15,11 +15,11 @@
         </div>
         <div>
             <h4>Withdraw</h4>
-            <h2>$<span>00</span></h2>
+            <h2>$<span id="total-withdraw">00</span></h2>
         </div>
         <div>
             <h4>Balance</h4>
-            <h2>$<span>1240</span></h2>
+            <h2>$<span id="total-balance">1240</span></h2>
         </div>
     </section>
     <section>
@@ -29,7 +29,7 @@
         </div>
         <br>
         <div>
-            <input type="text" placeholder="Enter Withdraw Amount">
+            <input id="current-withdraw-amount" type="text" placeholder="Enter Withdraw Amount">
             <button id="btn-withdraw">Withdraw</button>
         </div>
     </section>
@@ -52,6 +52,41 @@
 
             currentDeposit.value = '';
 
+            const totalBalance = document.getElementById('total-balance');
+            const totalBalanceAmount = totalBalance.innerText;
+            // console.log(totalBalanceAmount); 
+        
+            const totalBalanceAmountString = parseFloat(totalBalanceAmount);
+            // console.log(typeof totalBalanceAmountString);
+            
+            const finalBalance = totalBalanceAmountString + finalDepositAmount;
+            // console.log(finalBalance); 
+            totalBalance.innerText = finalBalance; 
+        })
+        document.getElementById('btn-withdraw').addEventListener('click', function (){
+            const currentWithdraw = document.getElementById('current-withdraw-amount');
+            const currentWithdrawAmount = currentWithdraw.value;
+            const currentWithdrawAmountString = parseFloat(currentWithdrawAmount);
+            // console.log(typeof currentWithdrawAmountString);
+            const totalWithdraw = document.getElementById('total-withdraw');
+            const totalWithdrawAmount = totalWithdraw.innerText;
+            const totalWithdrawAmountString = parseFloat(totalWithdrawAmount);
+            // console.log(typeof totalWithdrawAmountString);
+            const finalWithdrawAmount = currentWithdrawAmountString + totalWithdrawAmountString;
+            console.log(finalWithdrawAmount);
+            totalWithdraw.innerText = finalWithdrawAmount;
+            currentWithdraw.value = "";
+
+            const totalBalance = document.getElementById('total-balance');
+            const totalBalanceAmount = totalBalance.innerText;
+            // console.log(totalBalanceAmount); 
+        
+            const totalBalanceAmountString = parseFloat(totalBalanceAmount);
+            // console.log(typeof totalBalanceAmountString);
+            
+            const finalBalance = totalBalanceAmountString - finalWithdrawAmount;
+            // console.log(finalBalance); 
+            totalBalance.innerText = finalBalance; 
         })
     </script>
 </body>
