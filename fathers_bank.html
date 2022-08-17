@@ -50,18 +50,7 @@
             
             totalDeposit.innerText = finalDepositAmount;
 
-            currentDeposit.value = '';
-
-            const totalBalance = document.getElementById('total-balance');
-            const totalBalanceAmount = totalBalance.innerText;
-            // console.log(totalBalanceAmount); 
-        
-            const totalBalanceAmountString = parseFloat(totalBalanceAmount);
-            // console.log(typeof totalBalanceAmountString);
-            
-            const finalBalance = totalBalanceAmountString + finalDepositAmount;
-            // console.log(finalBalance); 
-            totalBalance.innerText = finalBalance; 
+            currentDeposit.value = ''; 
         })
         document.getElementById('btn-withdraw').addEventListener('click', function (){
             const currentWithdraw = document.getElementById('current-withdraw-amount');
@@ -84,7 +73,7 @@
             const totalBalanceAmountString = parseFloat(totalBalanceAmount);
             // console.log(typeof totalBalanceAmountString);
             
-            const finalBalance = totalBalanceAmountString - finalWithdrawAmount;
+            const finalBalance = totalBalanceAmountString - currentWithdrawAmountString;
             // console.log(finalBalance); 
             totalBalance.innerText = finalBalance; 
         })
