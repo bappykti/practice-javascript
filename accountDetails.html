@@ -22,15 +22,18 @@
             <h2>$<span id="previous-balance">1240</span></h2>
         </div>
         <div>
-            <input id="deposit-input-field" type="text" placeholder="Amount you want to deposit">
+            <input id="deposit-input-field" type="text" placeholder="Deposit Amount">
             <button id="btn-deposit" type="submit">Deposit</button>
             <br>
             <br>
-            <input id="withdraw-input-field" type="text" placeholder="Amount you want to withdraw">
+            <input id="withdraw-input-field" type="text" placeholder="Withdraw Amount">
             <button id="btn-withdraw" type="submit">Withdraw</button>
         </div>
     </section>
+    <script src="deposit.js"></script>
+    <script src="withdraw.js"></script>
     <script>
+        /*
         // deposit handel code
         document.getElementById('btn-deposit').addEventListener('click', function(){
             const depositInputField = document.getElementById('deposit-input-field');
@@ -62,6 +65,8 @@
             const totalBalance = previousBalanceAmount + currentDepositAmount;
             previousBalance.innerText = totalBalance;
         })
+        */
+       /*
         // withdraw handel code
         document.getElementById('btn-withdraw').addEventListener('click', function(){
             const withdrawInputField = document.getElementById('withdraw-input-field');
@@ -99,6 +104,7 @@
             previousBalance.innerText = totalBalance;
             
         })
+        */
     </script>
 </body>
 </html>
