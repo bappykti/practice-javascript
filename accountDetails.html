@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Info</title>
+</head>
+<body>
+    <h1>Current account status.</h1>
+    <section>
+        <div>
+            <h4>Deposit</h4>
+            <h2>$<span id="previous-deposit">00</span></h2>
+        </div>
+        <div>
+            <h4>Withdraw</h4>
+            <h2>$<span id="previous-withdraw">00</span></h2>
+        </div>
+        <div>
+            <h4>Balance</h4>
+            <h2>$<span id="previous-balance">1240</span></h2>
+        </div>
+        <div>
+            <input id="deposit-input-field" type="text" placeholder="Amount you want to deposit">
+            <button id="btn-deposit" type="submit">Deposit</button>
+            <br>
+            <br>
+            <input id="withdraw-input-field" type="text" placeholder="Amount you want to withdraw">
+            <button id="btn-withdraw" type="submit">Withdraw</button>
+        </div>
+    </section>
+    <script>
+        // deposit handel code
+        document.getElementById('btn-deposit').addEventListener('click', function(){
+            const depositInputField = document.getElementById('deposit-input-field');
+            const currentDepositString = depositInputField.value;
+            // console.log(typeof currentDepositString);
+            const currentDepositAmount = parseFloat(currentDepositString);
+            // console.log(typeof currentDepositAmount);
+
+            depositInputField.value = '';
+
+            if(isNaN(currentDepositAmount)){
+                alert ('This is not a number');
+                return;
+            }
+            
+            const previousDeposit = document.getElementById('previous-deposit');
+            const previousDepositString = previousDeposit.innerText;
+            const previousDepositAmount = parseFloat(previousDepositString);
+            // console.log(previousDepositAmount); 
+            const totalDeposit = currentDepositAmount + previousDepositAmount;
+            previousDeposit.innerText = totalDeposit;
+            // console.log(totalDeposit);
+          
+
+            const previousBalance = document.getElementById('previous-balance');
+            const previousBalanceString = previousBalance.innerText;
+            const previousBalanceAmount = parseFloat(previousBalanceString);
+            // console.log(previousBalanceAmount);
+            const totalBalance = previousBalanceAmount + currentDepositAmount;
+            previousBalance.innerText = totalBalance;
+        })
+        // withdraw handel code
+        document.getElementById('btn-withdraw').addEventListener('click', function(){
+            const withdrawInputField = document.getElementById('withdraw-input-field');
+            const currentWithdrawString = withdrawInputField.value;
+            // console.log(typeof currentDepositString);
+            const currentWithdrawAmount = parseFloat(currentWithdrawString);
+            // console.log(typeof currentDepositAmount);
+
+            withdrawInputField.value = '';
+
+            if(isNaN(currentWithdrawAmount)){
+                alert ('this is not a number')
+                return;
+            }
+            const previousWithdraw = document.getElementById('previous-withdraw');
+            const previousWithdrawString = previousWithdraw.innerText;
+            const previousWithdrawAmount = parseFloat(previousWithdrawString);
+            // console.log(previousWithdrawAmount); 
+            
+            const previousBalance = document.getElementById('previous-balance');
+            const previousBalanceString = previousBalance.innerText;
+            const previousBalanceAmount = parseFloat(previousBalanceString);
+
+            if(previousBalanceAmount < currentWithdrawAmount){
+                alert ('Tomar bap ar bank a ato taka nai.')
+                return;
+             }
+
+            const totalWithdraw = previousWithdrawAmount + currentWithdrawAmount;
+            previousWithdraw.innerText = totalWithdraw;
+            // console.log(totalWithdraw);
+
+            // console.log(previousBalanceAmount);
+            const totalBalance = previousBalanceAmount - currentWithdrawAmount;
+            previousBalance.innerText = totalBalance;
+            
+        })
+    </script>
+</body>
+</html>
