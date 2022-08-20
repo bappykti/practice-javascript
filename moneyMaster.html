@@ -20,7 +20,7 @@
         <div>
           <h4>Income</h4>
           <label for="income">Income : </label>
-          <input type="text" id="income" placeholder="Total Income" />
+          <input type="text" id="income" placeholder="Total Income"/>
         </div>
         <div>
           <h4>Expenses</h4>
@@ -40,7 +40,7 @@
         <button id="calculate">Calculate</button>
         <div>
           <h3>Total Expenses : <span id="total-expense-inner-text"> 0000</span></h3>
-          <h3>Balance : <span id="total-balance-inner-text"> 0000</span></h3>
+          <h3>Total Balance After Expenses : <span id="total-balance-inner-text"> 0000</span></h3>
         </div>
         <div>
           <label for="save">save : </label>
@@ -50,7 +50,7 @@
         </div>
         <div>
           <h3>Saving Amount : <span id="saving-amount">0000</span></h3>
-          <h3>Remaining Balance : <span id="remaining-balance">0000</span></h3>
+          <h3>Remaining Balance After Saving : <span id="remaining-balance">0000</span></h3>
         </div>
       </div>
     </section>
@@ -81,19 +81,28 @@
         */
         document.getElementById('calculate').addEventListener('click', function(){
             const incomeAmount = getIncomeInputFieldAmount('income');
+            if(isNaN(incomeAmount)){
+              alert ('Put your valid income first.');
+              return;
+            }
+  
             // console.log(incomeAmount);
             const expenseArea1 = getExpensesInputFieldAmount('food');
             const expenseArea2 = getExpensesInputFieldAmount('rent');
             const expenseArea3 = getExpensesInputFieldAmount('clothes');
-            if(incomeAmount < expenseArea1 || incomeAmount < expenseArea2 || incomeAmount < expenseArea3 ){
-                alert ("Put your expenses carefully.")
+            if(isNaN(expenseArea1) || isNaN(expenseArea2) || isNaN(expenseArea3)){
+              alert ('Put a valid area of expense amount. == "FOOD" "RENT" "CLOTHES"');
+              return;
+            }
+            else if(incomeAmount < expenseArea1 || incomeAmount < expenseArea2 || incomeAmount < expenseArea3 ){
+                alert ("Put your expenses carefully.");
                 return;
             }
 
             const totalAreaExpenseAmount = expenseArea1 + expenseArea2 + expenseArea3;
             //   console.log(totalAreaExpenseAmount);
             if(incomeAmount < totalAreaExpenseAmount){
-                alert ('You should reduce your area of expenses.')
+                alert ('You should reduce your area of expenses.');
                 return;
             }
 
@@ -113,10 +122,14 @@
             const previousBalanceInnerTextAmount = parseFloat(previousBalanceInnerTextString);
             // console.log(previousBalanceInnerTextAmount);
             // console.log(typeof previousBalanceInnerTextAmount);
-            const remainingBalance = incomeAmount - totalExpenses;
+            const totalBalanceAfterExpenses = incomeAmount - totalExpenses;
+            if(totalBalanceAfterExpenses <= 0){
+            previousBalanceInnerText.innerText = "Income and Expenses are Equal.";
+            return;
+            }
             // console.log(remainingBalance);
             // console.log(typeof remainingBalance);
-            previousBalanceInnerText.innerText = remainingBalance;
+            previousBalanceInnerText.innerText = totalBalanceAfterExpenses;
 
             const difference = incomeAmount - totalAreaExpenseAmount;
             // console.log(typeof difference);
@@ -127,7 +140,7 @@
             const savingPercentage = getIncomeInputFieldAmount('save');
             
             // console.log(savingPercentage);
-            const savingAmount = savingPercentage/100 * incomeAmount;                                                                       
+            const savingAmount = Math.round(savingPercentage/100 * incomeAmount);                                                                       
             if(savingAmount > difference){
                 alert ("How could you save more than your balance after expenses.");
                 return;
