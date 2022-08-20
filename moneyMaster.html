@@ -54,6 +54,8 @@
         </div>
       </div>
     </section>
+    <script src="moneyMaster.js"></script>
+    <!--
     <script>
         function getIncomeInputFieldAmount(inputFieldId){
             const incomeInputField = document.getElementById(inputFieldId);
@@ -68,17 +70,6 @@
             expensesInputField.value = "";
             return expensesInputFieldValueAmount;
         }
-        /*
-        function getValueChangeInInnerText(innerFieldId){
-            const innerTextValue = document.getElementById(innerFieldId);
-            const innerTextString = innerTextValue.innerText;
-            const innerTextAmount = parseFloat(innerTextString);
-            // innerTextValue.innerText = innerTextAmount;
-            // const totalExpenses = totalExpenseInnerTextAmount + totalExpenseAmount;
-            // totalExpenseInnerText.innerText = totalExpenses;
-            return innerTextValue;
-        }
-        */
         document.getElementById('calculate').addEventListener('click', function(){
             const incomeAmount = getIncomeInputFieldAmount('income');
             if(isNaN(incomeAmount)){
@@ -105,7 +96,6 @@
                 alert ('You should reduce your area of expenses.');
                 return;
             }
-
         
             const previousExpenseInnerText = document.getElementById('total-expense-inner-text');
             const previousExpenseInnerTextString = previousExpenseInnerText.innerText;
@@ -123,10 +113,7 @@
             // console.log(previousBalanceInnerTextAmount);
             // console.log(typeof previousBalanceInnerTextAmount);
             const totalBalanceAfterExpenses = incomeAmount - totalExpenses;
-            if(totalBalanceAfterExpenses <= 0){
-            previousBalanceInnerText.innerText = "Income and Expenses are Equal.";
-            return;
-            }
+
             // console.log(remainingBalance);
             // console.log(typeof remainingBalance);
             previousBalanceInnerText.innerText = totalBalanceAfterExpenses;
@@ -138,7 +125,11 @@
             document.getElementById('btn-save').addEventListener('click', function(){
             // console.log('i am clicked btn-save');
             const savingPercentage = getIncomeInputFieldAmount('save');
-            
+
+            if(totalBalanceAfterExpenses <= 0){
+            previousBalanceInnerText.innerText = "Income and Expenses are Equal.";
+            return;
+            }
             // console.log(savingPercentage);
             const savingAmount = Math.round(savingPercentage/100 * incomeAmount);                                                                       
             if(savingAmount > difference){
@@ -169,49 +160,9 @@
             // console.log(typeof remainingBalanceAfterSavingAmount);
             const currentRemainingBalanceAfterSaving = difference - savingAmount;
             previousRemainingBalanceAfterSaving.innerText = currentRemainingBalanceAfterSaving;
-
         })
-            
-        
-            // const incomeInputField = document.getElementById('income');
-            // const incomeInputFieldValueString = incomeInputField.value;
-            // console.log(incomeInputFieldValueString);
-            // console.log(typeof incomeInputFieldValueString);
-            // const incomeInputFieldValueAmount = parseFloat(incomeInputFieldValueString);
-            // console.log(typeof incomeInputFieldValueAmount)
-            // console.log(incomeInputFieldValueAmount)
         })
-        // document.getElementById('btn-save').addEventListener('click', function(){
-        //     const incomeAmount = getIncomeInputFieldAmount('income');
-        //     // console.log('i am clicked btn-save');
-        //     const savingPercentage = getIncomeInputFieldAmount('save');
-            
-        //     // console.log(savingPercentage);
-        //     const savingAmount = savingPercentage/100 * incomeAmount;
-        //     // console.log(savingAmount);
-        //     // console.log(typeof savingAmount);
-        //     const previousSavingAmount = document.getElementById('saving-amount');
-        //     const previousSavingAmountString = previousSavingAmount.innerText;
-        //     const previousSavingAmountValue = parseFloat(previousSavingAmountString);
-        //     // console.log(previousSavingAmountValue);
-        //     // console.log(typeof previousSavingAmountValue);
-        //     previousSavingAmount.innerText = savingAmount;
-
-        //     const previousRemainingBalanceAfterSaving = document.getElementById('remaining-balance');
-        //     const previousRemainingBalanceAfterSavingString = previousRemainingBalanceAfterSaving.innerText;
-        //     const previousRemainingBalanceAfterSavingAmount = parseFloat(previousRemainingBalanceAfterSavingString);
-        //     // console.log(remainingBalanceAfterSavingAmount);
-        //     // console.log(typeof remainingBalanceAfterSavingAmount);
-        //     const currentRemainingBalanceAfterSaving = difference - previousRemainingBalanceAfterSavingAmount;
-
-        // })
-
     </script>
-    <script>
-        let a = 100;
-        let b = 11;
-        const result = a/100 * b;
-        console.log(result);
-    </script>
+  -->
   </body>
 </html>
