@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add List</title>
+</head>
+<body>
+    <section>
+        <h2>hello List</h2>
+        <ol id="order-list">
+            <li>I am one now.</li>
+        </ol>
+        <button id="add-list">Add List</button>
+    </section>
+    <script>
+        document.getElementById('add-list').addEventListener('click', function (){
+            const placeList = document.getElementById('order-list');
+            const li = document.createElement('li');
+            li.innerText = "Hello i am your new li";
+            placeList.appendChild(li);
+        })
+    </script>
+</body>
+</html>
