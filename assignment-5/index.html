@@ -14,8 +14,9 @@
 <body>
     <header class="w-full mx-auto bg-sky-300">
         <h1 class="text-5xl text-center">Team management is easy <span class="text-orange-600">With US</span></h1>
+        <p class="text-xl text-center">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. <br> Velit officia consequat duis enim velit mollit. Exercitation veniam <br> consequat sunt nostrud amet.</p>
     </header>
-    <section class="mt-20 w-9/12 mx-auto">
+    <section class="mt-10 w-9/12 mx-auto">
             <div class="grid grid-cols-4 gap-4 text-center">
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure class="w-full">
@@ -72,15 +73,144 @@
                       <div class="mt-5">
                       <h2 class="text-3xl">Selected Players <span id="total-added-players">0</span></h2>
                       <div>
-                        <ol id="player-on-board">
+                        <ul id="player-on-board">
                           
-                        </ol>
-                      </div>
+                        </ul>
                       </div>
                       </div>
                     </div>
-                    
-            </div>
+                    <div class="w-full bg-base-100 bg-sky-200">
+                        <figure class="w-full">
+                          <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
+                        </figure>
+                        <div class="pt-2 items-center text-center">
+                          <h2 class="mt-2 text-xl">Manuel Neuer</h2>
+                          <h5 class="mt-2">Goalkeeper</h5>
+                          <div class="mt-2 d-flex justify-content-center align-item-center">
+                          <span>36 Goals</span>
+                          <span>.</span>
+                          <span>Assist</span>
+                          </div>
+                          <div class="mt-2">
+                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="w-full bg-base-100 bg-sky-200">
+                        <figure class="w-full">
+                          <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
+                        </figure>
+                        <div class="pt-2 items-center text-center">
+                          <h2 class="mt-2 text-xl">Manuel Neuer</h2>
+                          <h5 class="mt-2">Goalkeeper</h5>
+                          <div class="mt-2 d-flex justify-content-center align-item-center">
+                          <span>36 Goals</span>
+                          <span>.</span>
+                          <span>Assist</span>
+                          </div>
+                          <div class="mt-2">
+                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="w-full bg-base-100 bg-sky-200">
+                        <figure class="w-full">
+                          <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
+                        </figure>
+                        <div class="pt-2 items-center text-center">
+                          <h2 class="mt-2 text-xl">Manuel Neuer</h2>
+                          <h5 class="mt-2">Goalkeeper</h5>
+                          <div class="mt-2 d-flex justify-content-center align-item-center">
+                          <span>36 Goals</span>
+                          <span>.</span>
+                          <span>Assist</span>
+                          </div>
+                          <div class="mt-2">
+                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-1 row-span-2">
+                      <h1 class="text-xl mb-2">Budget</h1>
+                      <div class="form-control w-full">
+                        <label class="label">
+                          <span class="label-text">Per Player</span>
+                        <input id="per-player-cost" type="text" placeholder="Type here" class="input input-bordered" />
+                      </div>
+                      <div class="mt-2">
+                        <button id="btn-total-player-cost" class="btn btn-primary rounded-none mb-5">Calculate</button>
+                      </div>
+                      <p class="mb-2">Player Expenses $<span id="total-player-cost">0000</span></p>
+                      <div class="form-control w-full max-w-xs">
+                        <label class="label">
+                          <span class="label-text">Manager</span>
+                        <input id="manager-cost" type="text" placeholder="Type here" class="input input-bordered"/>
+                      </div>
+                      <div class="form-control w-full max-w-xs">
+                        <label class="label">
+                          <span class="label-text">Coach</span>
+                        <input id="coach-cost" type="text" placeholder="Type here" class="input input-bordered"/>
+                      </div>
+                      <div class="mt-2">
+                        <button id="btn-total-calculation" class="btn btn-primary rounded-none mb-5">Calculate Total</button>
+                      </div>
+                      <div class="flex justify-between">
+                        <p>Total</p>
+                        <p>$<span id="total-cost">0000</span></p>
+                      </div>
+                    </div>
+                    <div class="w-full bg-base-100 bg-sky-200">
+                      <figure class="w-full">
+                        <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
+                      </figure>
+                      <div class="pt-2 items-center text-center">
+                        <h2 class="mt-2 text-xl">Manuel Neuer</h2>
+                        <h5 class="mt-2">Goalkeeper</h5>
+                        <div class="mt-2 d-flex justify-content-center align-item-center">
+                        <span>36 Goals</span>
+                        <span>.</span>
+                        <span>Assist</span>
+                        </div>
+                        <div class="mt-2">
+                          <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full bg-base-100 bg-sky-200">
+                      <figure class="w-full">
+                        <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
+                      </figure>
+                      <div class="pt-2 items-center text-center">
+                        <h2 class="mt-2 text-xl">Manuel Neuer</h2>
+                        <h5 class="mt-2">Goalkeeper</h5>
+                        <div class="mt-2 d-flex justify-content-center align-item-center">
+                        <span>36 Goals</span>
+                        <span>.</span>
+                        <span>Assist</span>
+                        </div>
+                        <div class="mt-2">
+                          <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full bg-base-100 bg-sky-200">
+                      <figure class="w-full">
+                        <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
+                      </figure>
+                      <div class="pt-2 items-center text-center">
+                        <h2 class="mt-2 text-xl">Manuel Neuer</h2>
+                        <h5 class="mt-2">Goalkeeper</h5>
+                        <div class="mt-2 d-flex justify-content-center align-item-center">
+                        <span>36 Goals</span>
+                        <span>.</span>
+                        <span>Assist</span>
+                        </div>
+                        <div class="mt-2">
+                          <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                        </div>
+                      </div>
+                    </div>
+              </div>
     </section>
     <script>
       const selectedPlayerList = [];
@@ -106,13 +236,68 @@
         // console.log(playerName);
         selectedPlayerList.push(playerName);
         if(selectedPlayerList.length >= 6){
-          alert ('You can not select more than five players.')
+          alert ('You can not select more than five players.');
           return;
         }
-        console.log(selectedPlayerList);
+        // console.log(selectedPlayerList);
         document.getElementById('total-added-players').innerText = selectedPlayerList.length;
         displayPlayerBoard(selectedPlayerList);
       }
+
+      function getValueFromInput(elementId){
+        const perPlayerCostElement = document.getElementById(elementId);
+        const perPlayerCostString = perPlayerCostElement.value;
+        const perPlayerCost = parseFloat(perPlayerCostString);
+        return perPlayerCost;
+      }
+      // function getValueFromElement(elementId){
+      //   const previousPlayerCostElement = document.getElementById(elementId);
+      //   const previousPlayerCostString = previousPlayerCostElement.innerText;
+      //   const perviousPlayerCost = parseFloat(previousPlayerCostString);
+      //   const totalPlayerCost = selectedPlayerList.length * perPlayerCost;
+      //   return perviousPlayerCost;
+      // }
+
+      document.getElementById('btn-total-player-cost').addEventListener('click', function(){
+
+        // const perPlayerCostElement = document.getElementById('per-player-cost');
+        // const perPlayerCostString = perPlayerCostElement.value;
+        // const perPlayerCost = parseFloat(perPlayerCostString);
+
+        const perPlayerCost = getValueFromInput('per-player-cost');
+      
+        
+        // console.log(perPlayerCost);
+        // const previousPlayerCostElement = document.getElementById('total-player-cost');
+        // const previousPlayerCostString = previousPlayerCostElement.innerText;
+        // const perviousPlayerCost = parseInt(previousPlayerCostString);
+        // console.log(perviousPlayerCost);
+        const totalPlayerCost = selectedPlayerList.length * perPlayerCost;
+        document.getElementById('total-player-cost').innerText = totalPlayerCost;
+
+        document.getElementById('btn-total-calculation').addEventListener('click', function(){
+        // console.log('i am just clicked');
+        const managerCost = getValueFromInput('manager-cost');
+        
+        
+        // console.log(managerCost);
+        const coachCost = getValueFromInput('coach-cost');
+        
+        // console.log(coachCost);
+        const totalManagementCost = managerCost + coachCost;
+        // console.log(totalManagementCost);
+        const totalCost = totalPlayerCost + totalManagementCost;
+        // console.log(totalCost);
+        document.getElementById('total-cost').innerText = totalCost;
+
+      })
+
+        
+        
+        // const totalPlayerCost = selectedPlayerList * perPlayerCost;
+        // previousPlayerCostElement.innerText = totalPlayerCost;
+      })
+      
     </script>
 </body>
 </html>
