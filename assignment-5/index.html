@@ -16,10 +16,7 @@
         <h1 class="text-5xl text-center">Team management is easy <span class="text-orange-600">With US</span></h1>
     </header>
     <section class="mt-20 w-9/12 mx-auto">
-        <div>
-            <div class="grid grid-cols-2 gap-4 text-center">
-                <div class="grid grid-cols-3 gap-4 bg-sky-200"></div>
-                <div class="grid grid-cols-3 gap-4 bg-sky-200">
+            <div class="grid grid-cols-4 gap-4 text-center">
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure class="w-full">
                           <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
@@ -33,10 +30,10 @@
                           <span>Assist</span>
                           </div>
                           <div class="mt-2">
-                            <button class="btn btn-primary rounded-none px-2">SELECT</button>
+                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
                           </div>
                         </div>
-                      </div>
+                    </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure class="w-full">
                           <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
@@ -50,10 +47,10 @@
                           <span>Assist</span>
                           </div>
                           <div class="mt-2">
-                            <button class="btn btn-primary rounded-none px-2">SELECT</button>
+                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
                           </div>
                         </div>
-                      </div>
+                    </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure class="w-full">
                           <img src="https://placeimg.com/400/225/arch" alt="Shoes"/>
@@ -67,12 +64,55 @@
                           <span>Assist</span>
                           </div>
                           <div class="mt-2">
-                            <button class="btn btn-primary rounded-none px-2">SELECT</button>
+                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
                           </div>
                         </div>
+                    </div>
+                    <div class="w-full bg-base-100 bg-sky-200">
+                      <div class="mt-5">
+                      <h2 class="text-3xl">Selected Players <span id="total-added-players">0</span></h2>
+                      <div>
+                        <ol id="player-on-board">
+                          
+                        </ol>
                       </div>
-                  </div>
-        </div>
+                      </div>
+                      </div>
+                    </div>
+                    
+            </div>
     </section>
+    <script>
+      const selectedPlayerList = [];
+      function displayPlayerBoard (selectedPlayers){
+        // console.log(selectedPlayers);
+        const playerOnBoard = document.getElementById('player-on-board');
+        playerOnBoard.innerHTML = "";
+        for(let i = 0; i < selectedPlayers.length; i++){
+          const name = selectedPlayers[0];
+          // console.log(selectedPlayers[i]);
+          const li = document.createElement('li');
+          li.style = 'padding: 10px';
+          // li.style = 'text-align: left';
+          // li.style = 'margin-left: 10px';
+          li.innerHTML = `
+          <li>${i + 1}.<span>  ${name}</span></li>`;
+          playerOnBoard.appendChild(li); 
+        }
+      }
+      function addToList(element){
+        // console.log(element.parentNode.parentNode.children[0].innerText);
+        const playerName =element.parentNode.parentNode.children[0].innerText
+        // console.log(playerName);
+        selectedPlayerList.push(playerName);
+        if(selectedPlayerList.length >= 6){
+          alert ('You can not select more than five players.')
+          return;
+        }
+        console.log(selectedPlayerList);
+        document.getElementById('total-added-players').innerText = selectedPlayerList.length;
+        displayPlayerBoard(selectedPlayerList);
+      }
+    </script>
 </body>
 </html>
