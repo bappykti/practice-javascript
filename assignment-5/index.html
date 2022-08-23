@@ -12,15 +12,15 @@
     <title>my Team Management </title>
 </head>
 <body>
-    <header class="w-full mx-auto bg-sky-300">
+    <header class="w-full mx-auto bg-sky-600">
         <h1 class="text-5xl text-center">Team management is easy <span class="text-orange-600">With US</span></h1>
         <p class="text-xl text-center">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. <br> Velit officia consequat duis enim velit mollit. Exercitation veniam <br> consequat sunt nostrud amet.</p>
     </header>
-    <section class="mt-10 w-9/12 mx-auto">
+    <section class="mt-10 mb-10 w-9/12 mx-auto">
             <div class="grid grid-cols-4 gap-4 text-center">
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure>
-                          <img src="images/Manuel.jpg" class="w-full h-80" alt="Manuel Neuer"/>
+                          <img src="images/Manuel.jpg" class="w-full h-60" alt="Manuel Neuer"/>
                         </figure>
                         <div class="pt-2 items-center text-center">
                           <h2 class="mt-2 text-xl">Manuel Neuer</h2>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure>
-                          <img src="images/antonio.jpg" class="w-full h-80" alt="Antonio Rüdiger"/>
+                          <img src="images/antonio.jpg" class="w-full h-60" alt="Antonio Rüdiger"/>
                         </figure>
                         <div class="pt-2 items-center text-center">
                           <h2 class="mt-2 text-xl">Antonio Rüdiger</h2>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure>
-                          <img src="images/David.jpg" class="w-full h-80" alt="David Raum"/>
+                          <img src="images/David.jpg" class="w-full h-60" alt="David Raum"/>
                         </figure>
                         <div class="pt-2 items-center text-center">
                           <h2 class="mt-2 text-xl">David Raum</h2>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure>
-                          <img src="images/Jonathan.jpg" class="w-full h-80" alt="Jonathan Tah"/>
+                          <img src="images/Jonathan.jpg" class="w-full h-60" alt="Jonathan Tah"/>
                         </figure>
                         <div class="pt-2 items-center text-center">
                           <h2 class="mt-2 text-xl">Jonathan Tah</h2>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure>
-                          <img src="images/Thilo.jpg" class="w-full h-80" alt="Thilo Kehrer"/>
+                          <img src="images/Thilo.jpg" class="w-full h-60" alt="Thilo Kehrer"/>
                         </figure>
                         <div class="pt-2 items-center text-center">
                           <h2 class="mt-2 text-xl">Thilo Kehrer</h2>
@@ -115,7 +115,7 @@
                     </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                         <figure>
-                          <img src="images/Joshua.jpg" class="w-full h-80" alt="Joshua Kimmich"/>
+                          <img src="images/Joshua.jpg" class="w-full h-60" alt="Joshua Kimmich"/>
                         </figure>
                         <div class="pt-2 items-center text-center">
                           <h2 class="mt-2 text-xl">Joshua Kimmich</h2>
@@ -161,7 +161,7 @@
                     </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                       <figure>
-                        <img src="images/Kai.jpg" class="w-full h-80" alt="Kai Havertz"/>
+                        <img src="images/Kai.jpg" class="w-full h-60" alt="Kai Havertz"/>
                       </figure>
                       <div class="pt-2 items-center text-center">
                         <h2 class="mt-2 text-xl">Kai Havertz</h2>
@@ -178,7 +178,7 @@
                     </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                       <figure>
-                        <img src="images/Leon.jpg" class="w-full h-80" alt="Leon Goretzka"/>
+                        <img src="images/Leon.jpg" class="w-full h-60" alt="Leon Goretzka"/>
                       </figure>
                       <div class="pt-2 items-center text-center">
                         <h2 class="mt-2 text-xl">Leon Goretzka</h2>
@@ -195,7 +195,7 @@
                     </div>
                     <div class="w-full bg-base-100 bg-sky-200">
                       <figure>
-                        <img src="images/Timo.jpg" class="w-full h-80" alt="Timo Werner"/>
+                        <img src="images/Timo.jpg" class="w-full h-60" alt="Timo Werner"/>
                       </figure>
                       <div class="pt-2 items-center text-center">
                         <h2 class="mt-2 text-xl">Timo Werner</h2>
@@ -219,14 +219,18 @@
         const playerOnBoard = document.getElementById('player-on-board');
         playerOnBoard.innerHTML = "";
         for(let i = 0; i < selectedPlayers.length; i++){
-          // const name = selectedPlayers[0];
+           // if(selectedPlayerList.length >= 6){
+        //   alert ('You can not select more than five players.');
+        //   return;
+        // }
+          const name = selectedPlayers[i];
           // console.log(selectedPlayers[i]);
           const li = document.createElement('li');
           li.style = 'padding: 10px';
           // li.style = 'text-align: left';
           // li.style = 'margin-left: 10px';
           li.innerHTML = `
-          <li>${i + 1}.<span>  ${selectedPlayers}</span></li>`;
+          <li>${i + 1}.<span>  ${name}</span></li>`;
           playerOnBoard.appendChild(li); 
         }
       }
@@ -237,8 +241,19 @@
         selectedPlayerList.push(playerName);
         if(selectedPlayerList.length >= 6){
           alert ('You can not select more than five players.');
-          return;
+          if( selectedPlayerList.length > 5){
+          selectedPlayerList.length = 5;
+            return;
+            }
         }
+        // else if( selectedPlayerList.length > 5){
+        //   selectedPlayerList.length = 5;
+        //     return;
+        //     }
+        // if(selectedPlayerList.length >= 6){
+        //   alert ('You can not select more than five players.');
+        //   return;
+        // }
         // console.log(selectedPlayerList);
         document.getElementById('total-added-players').innerText = selectedPlayerList.length;
         displayPlayerBoard(selectedPlayerList);
