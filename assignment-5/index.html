@@ -132,7 +132,7 @@
                 </div>
               </div>
           </div>
-          <div class="p-4 row-span-2 text-zinc-50 bg-gray-900 border border-gray-600 h-fit">
+          <div class="p-8 row-span-2 text-zinc-50 bg-gray-900 border border-gray-600 h-fit">
             <h1 class="text-xl mb-2">Budget</h1>
             <div class="w-full">
               <label class="label">
@@ -277,10 +277,13 @@
         document.getElementById('total-added-players').innerText = selectedPlayerList.length;
         displayPlayerBoard(selectedPlayerList);
       }
-
       function getValueFromInput(elementId){
         const perPlayerCostElement = document.getElementById(elementId);
         const perPlayerCostString = perPlayerCostElement.value;
+        if(isNaN(perPlayerCostString)){
+          alert ("provide a valid number.");
+        return perPlayerCostElement.value = ""; 
+        }
         const perPlayerCost = parseFloat(perPlayerCostString);
         return perPlayerCost;
       }
@@ -299,6 +302,11 @@
         // const perPlayerCost = parseFloat(perPlayerCostString);
 
         const perPlayerCost = getValueFromInput('per-player-cost');
+
+        // if(isNaN(perPlayerCost)){
+        //   alert ("provide a valid number.");
+        //   return;
+        // }
       
         
         // console.log(perPlayerCost);
@@ -314,8 +322,10 @@
         const managerCost = getValueFromInput('manager-cost');
         
         
+        
         // console.log(managerCost);
         const coachCost = getValueFromInput('coach-cost');
+        
         
         // console.log(coachCost);
         const totalManagementCost = managerCost + coachCost;
