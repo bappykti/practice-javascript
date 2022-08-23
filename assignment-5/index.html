@@ -9,209 +9,217 @@
     <!-- daisyui cdn link  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
 
-    <title>my Team Management </title>
+    <title>Team Management </title>
 </head>
 <body>
-    <header class="w-full mx-auto bg-sky-200">
-        <h1 class="text-5xl text-center">Team management is easy <span class="text-orange-800">With US</span></h1>
-        <p class="text-xl text-center">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. <br> Velit officia consequat duis enim velit mollit. Exercitation veniam <br> consequat sunt nostrud amet.</p>
+    <header class="w-full py-20 mx-auto bg-gray-900">
+        <h1 class="text-5xl text-white text-center mb-10">Team management is easy <span class="text-rose-400 text-7xl">`With US`</span></h1>
+        <p class="text-xl text-center text-zinc-50">Their main responsibility is to improve the players and help them produce positive results on the field. The manager is responsible  <br> for running and functioning of the team. He has the autonomy to choose the supporting staff. He also manages player's contracts <br> and can add more players if required.</p>
     </header>
-    <section class="mt-10 mb-10 w-9/12 mx-auto">
-            <div class="grid grid-cols-4 gap-4 text-center">
-                    <div class="w-full bg-base-100 bg-sky-200">
-                        <figure>
-                          <img src="images/Manuel.jpg" class="w-full h-80" alt="Manuel Neuer"/>
-                        </figure>
-                        <div class="pt-2 items-center text-center">
-                          <h2 class="mt-2 text-xl">Manuel Neuer</h2>
-                          <h5 class="mt-2">Goalkeeper</h5>
-                          <div class="mt-2 d-flex justify-content-center align-item-center">
-                          <span>26 Goals</span>
-                          <span>.</span>
-                          <span>Assist</span>
-                          </div>
-                          <div class="mt-2">
-                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                        <figure>
-                          <img src="images/antonio.jpg" class="w-full h-80" alt="Antonio Rüdiger"/>
-                        </figure>
-                        <div class="pt-2 items-center text-center">
-                          <h2 class="mt-2 text-xl">Antonio Rüdiger</h2>
-                          <h5 class="mt-2">Centre-Back</h5>
-                          <div class="mt-2 d-flex justify-content-center align-item-center">
-                          <span>23 Goals</span>
-                          <span>.</span>
-                          <span>Assist</span>
-                          </div>
-                          <div class="mt-2">
-                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                        <figure>
-                          <img src="images/David.jpg" class="w-full h-80" alt="David Raum"/>
-                        </figure>
-                        <div class="pt-2 items-center text-center">
-                          <h2 class="mt-2 text-xl">David Raum</h2>
-                          <h5 class="mt-2">Left-Back</h5>
-                          <div class="mt-2 d-flex justify-content-center align-item-center">
-                          <span>40 Goals</span>
-                          <span>.</span>
-                          <span>Assist</span>
-                          </div>
-                          <div class="mt-2">
-                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                      <div class="mt-5">
-                      <h2 class="text-3xl">Selected Players <span id="total-added-players">0</span></h2>
-                      <div>
-                        <ul id="player-on-board">
-                          
-                        </ul>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                        <figure>
-                          <img src="images/Jonathan.jpg" class="w-full h-80" alt="Jonathan Tah"/>
-                        </figure>
-                        <div class="pt-2 items-center text-center">
-                          <h2 class="mt-2 text-xl">Jonathan Tah</h2>
-                          <h5 class="mt-2">Centre-Back</h5>
-                          <div class="mt-2 d-flex justify-content-center align-item-center">
-                          <span>32 Goals</span>
-                          <span>.</span>
-                          <span>Assist</span>
-                          </div>
-                          <div class="mt-2">
-                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                        <figure>
-                          <img src="images/Thilo.jpg" class="w-full h-80" alt="Thilo Kehrer"/>
-                        </figure>
-                        <div class="pt-2 items-center text-center">
-                          <h2 class="mt-2 text-xl">Thilo Kehrer</h2>
-                          <h5 class="mt-2">Centre-Back</h5>
-                          <div class="mt-2 d-flex justify-content-center align-item-center">
-                          <span>36 Goals</span>
-                          <span>.</span>
-                          <span>Assist</span>
-                          </div>
-                          <div class="mt-2">
-                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                        <figure>
-                          <img src="images/Joshua.jpg" class="w-full h-80" alt="Joshua Kimmich"/>
-                        </figure>
-                        <div class="pt-2 items-center text-center">
-                          <h2 class="mt-2 text-xl">Joshua Kimmich</h2>
-                          <h5 class="mt-2">Defensive Midfield</h5>
-                          <div class="mt-2 d-flex justify-content-center align-item-center">
-                          <span>12 Goals</span>
-                          <span>.</span>
-                          <span>Assist</span>
-                          </div>
-                          <div class="mt-2">
-                            <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="p-1 row-span-2">
-                      <h1 class="text-xl mb-2">Budget</h1>
-                      <div class="form-control w-full">
-                        <label class="label">
-                          <span class="label-text">Per Player</span>
-                        <input id="per-player-cost" type="text" placeholder="Type here" class="input input-bordered" />
-                      </div>
-                      <div class="mt-2">
-                        <button id="btn-total-player-cost" class="btn btn-primary rounded-none mb-5">Calculate</button>
-                      </div>
-                      <p class="mb-2">Player Expenses $<span id="total-player-cost">0000</span></p>
-                      <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                          <span class="label-text">Manager</span>
-                        <input id="manager-cost" type="text" placeholder="Type here" class="input input-bordered"/>
-                      </div>
-                      <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                          <span class="label-text">Coach</span>
-                        <input id="coach-cost" type="text" placeholder="Type here" class="input input-bordered"/>
-                      </div>
-                      <div class="mt-2">
-                        <button id="btn-total-calculation" class="btn btn-primary rounded-none mb-5">Calculate Total</button>
-                      </div>
-                      <div class="flex justify-between">
-                        <p>Total</p>
-                        <p>$<span id="total-cost">0000</span></p>
-                      </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                      <figure>
-                        <img src="images/Kai.jpg" class="w-full h-80" alt="Kai Havertz"/>
-                      </figure>
-                      <div class="pt-2 items-center text-center">
-                        <h2 class="mt-2 text-xl">Kai Havertz</h2>
-                        <h5 class="mt-2">Attacking Midfield</h5>
-                        <div class="mt-2 d-flex justify-content-center align-item-center">
-                        <span>16 Goals</span>
-                        <span>.</span>
-                        <span>Assist</span>
-                        </div>
-                        <div class="mt-2">
-                          <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                      <figure>
-                        <img src="images/Leon.jpg" class="w-full h-80" alt="Leon Goretzka"/>
-                      </figure>
-                      <div class="pt-2 items-center text-center">
-                        <h2 class="mt-2 text-xl">Leon Goretzka</h2>
-                        <h5 class="mt-2">Central Midfield</h5>
-                        <div class="mt-2 d-flex justify-content-center align-item-center">
-                        <span>36 Goals</span>
-                        <span>.</span>
-                        <span>Assist</span>
-                        </div>
-                        <div class="mt-2">
-                          <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-full bg-base-100 bg-sky-200">
-                      <figure>
-                        <img src="images/Timo.jpg" class="w-full h-80" alt="Timo Werner"/>
-                      </figure>
-                      <div class="pt-2 items-center text-center">
-                        <h2 class="mt-2 text-xl">Timo Werner</h2>
-                        <h5 class="mt-2">Centre-Forward</h5>
-                        <div class="mt-2 d-flex justify-content-center align-item-center">
-                        <span>16 Goals</span>
-                        <span>.</span>
-                        <span>Assist</span>
-                        </div>
-                        <div class="mt-2">
-                          <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
-                        </div>
-                      </div>
-                    </div>
+    <section class="w-full bg-gray-800">
+      <div class="pt-10 pb-10 w-9/12 mx-auto">
+        <div class="grid grid-cols-4 gap-4 text-center">
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+              <figure>
+                <img src="images/Manuel.jpg" class="w-full h-80" alt="Manuel Neuer"/>
+              </figure>
+              <div class="pt-2 items-center text-center">
+                <h2 class="mt-2 text-xl">Manuel Neuer</h2>
+                <h5 class="mt-2">Goalkeeper</h5>
+                <div class="mt-2 d-flex justify-content-center align-item-center">
+                <span>26 Goals</span>
+                <span>.</span>
+                <span>Assist</span>
+                </div>
+                <div class="mt-2">
+                  <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                </div>
               </div>
+          </div>
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+              <figure>
+                <img src="images/antonio.jpg" class="w-full h-80" alt="Antonio Rüdiger"/>
+              </figure>
+              <div class="pt-2 items-center text-center">
+                <h2 class="mt-2 text-xl">Antonio Rüdiger</h2>
+                <h5 class="mt-2">Centre-Back</h5>
+                <div class="mt-2 d-flex justify-content-center align-item-center">
+                <span>23 Goals</span>
+                <span>.</span>
+                <span>Assist</span>
+                </div>
+                <div class="mt-2">
+                  <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                </div>
+              </div>
+          </div>
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+              <figure>
+                <img src="images/David.jpg" class="w-full h-80" alt="David Raum"/>
+              </figure>
+              <div class="pt-2 items-center text-center">
+                <h2 class="mt-2 text-xl">David Raum</h2>
+                <h5 class="mt-2">Left-Back</h5>
+                <div class="mt-2 d-flex justify-content-center align-item-center">
+                <span>40 Goals</span>
+                <span>.</span>
+                <span>Assist</span>
+                </div>
+                <div class="mt-2">
+                  <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                </div>
+              </div>
+          </div>
+          <div class="w-full p-10 bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+            <div class="mt-5">
+              <h2 class="text-4xl mb-3">V Players Board</h2>
+            <h2 class="text-xl">Selected Players <span id="total-added-players">0</span></h2>
+            <div>
+              <ul id="player-on-board">
+              
+              </ul>
+            </div>
+            </div>
+          </div>
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+              <figure>
+                <img src="images/Jonathan.jpg" class="w-full h-80" alt="Jonathan Tah"/>
+              </figure>
+              <div class="pt-2 items-center text-center">
+                <h2 class="mt-2 text-xl">Jonathan Tah</h2>
+                <h5 class="mt-2">Centre-Back</h5>
+                <div class="mt-2 d-flex justify-content-center align-item-center">
+                <span>32 Goals</span>
+                <span>.</span>
+                <span>Assist</span>
+                </div>
+                <div class="mt-2">
+                  <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                </div>
+              </div>
+          </div>
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+              <figure>
+                <img src="images/Thilo.jpg" class="w-full h-80" alt="Thilo Kehrer"/>
+              </figure>
+              <div class="pt-2 items-center text-center">
+                <h2 class="mt-2 text-xl">Thilo Kehrer</h2>
+                <h5 class="mt-2">Centre-Back</h5>
+                <div class="mt-2 d-flex justify-content-center align-item-center">
+                <span>36 Goals</span>
+                <span>.</span>
+                <span>Assist</span>
+                </div>
+                <div class="mt-2">
+                  <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                </div>
+              </div>
+          </div>
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+              <figure>
+                <img src="images/Joshua.jpg" class="w-full h-80" alt="Joshua Kimmich"/>
+              </figure>
+              <div class="pt-2 items-center text-center">
+                <h2 class="mt-2 text-xl">Joshua Kimmich</h2>
+                <h5 class="mt-2">Defensive Midfield</h5>
+                <div class="mt-2 d-flex justify-content-center align-item-center">
+                <span>12 Goals</span>
+                <span>.</span>
+                <span>Assist</span>
+                </div>
+                <div class="mt-2">
+                  <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+                </div>
+              </div>
+          </div>
+          <div class="p-8 row-span-3 text-zinc-50 bg-gray-900 border border-gray-600 h-fit">
+            <h1 class="text-xl mb-2">Budget</h1>
+            <div class="form-control w-full">
+              <label class="label">
+                <span class="label-text text-zinc-50">Per Player</span>
+              <input id="per-player-cost" type="text" placeholder="Per Player Fee" class="input input-bordered text-stone-900" />
+            </div>
+            <div class="mt-2">
+              <button id="btn-total-player-cost" class="btn btn-primary rounded-none mb-5">Calculate</button>
+            </div>
+            <p class="mb-2 text-zinc-50">Player Expenses $<span id="total-player-cost">0000</span></p>
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text text-zinc-50">Manager</span>
+              <input id="manager-cost" type="text" placeholder="Manager Fee" class="input input-bordered text-stone-900	"/>
+            </div>
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text text-zinc-50">Coach</span>
+              <input id="coach-cost" type="text" placeholder="Coach Fee" class="input input-bordered text-stone-900	"/>
+            </div>
+            <div class="mt-2">
+              <button id="btn-total-calculation" class="btn btn-primary rounded-none mb-5">Calculate Total</button>
+            </div>
+            <div class="flex justify-between">
+              <p>Total</p>
+              <p>$<span id="total-cost">0000</span></p>
+            </div>
+            
+          </div>
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+            <figure>
+              <img src="images/Kai.jpg" class="w-full h-80" alt="Kai Havertz"/>
+            </figure>
+            <div class="pt-2 items-center text-center">
+              <h2 class="mt-2 text-xl">Kai Havertz</h2>
+              <h5 class="mt-2">Attacking Midfield</h5>
+              <div class="mt-2 d-flex justify-content-center align-item-center">
+              <span>16 Goals</span>
+              <span>.</span>
+              <span>Assist</span>
+              </div>
+              <div class="mt-2">
+                <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+            <figure>
+              <img src="images/Leon.jpg" class="w-full h-80" alt="Leon Goretzka"/>
+            </figure>
+            <div class="pt-2 items-center text-center">
+              <h2 class="mt-2 text-xl">Leon Goretzka</h2>
+              <h5 class="mt-2">Central Midfield</h5>
+              <div class="mt-2 d-flex justify-content-center align-item-center">
+              <span>36 Goals</span>
+              <span>.</span>
+              <span>Assist</span>
+              </div>
+              <div class="mt-2">
+                <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full bg-base-100 text-zinc-50 bg-gray-900 border border-gray-600">
+            <figure>
+              <img src="images/Timo.jpg" class="w-full h-80" alt="Timo Werner"/>
+            </figure>
+            <div class="pt-2 items-center text-center">
+              <h2 class="mt-2 text-xl">Timo Werner</h2>
+              <h5 class="mt-2">Centre-Forward</h5>
+              <div class="mt-2 d-flex justify-content-center align-item-center">
+              <span>16 Goals</span>
+              <span>.</span>
+              <span>Assist</span>
+              </div>
+              <div class="mt-2">
+                <button onclick="addToList(this)" class="btn btn-primary rounded-none px-20 mb-5">SELECT</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+           
     </section>
+    <footer class="py-10 text-zinc-50 bg-gray-900">
+      <p class="text-center">Copyright @ 2022 All Rights Reserved.</p>
+    </footer>
     <script>
       const selectedPlayerList = [];
       function displayPlayerBoard (selectedPlayers){
@@ -226,11 +234,13 @@
           const name = selectedPlayers[i];
           // console.log(selectedPlayers[i]);
           const li = document.createElement('li');
-          li.style = 'padding: 10px';
-          // li.style = 'text-align: left';
+          // li.style = 'padding: 10px';
+          li.style = 'text-align: left';
           // li.style = 'margin-left: 10px';
           li.innerHTML = `
           <li>${i + 1}.<span>  ${name}</span></li>`;
+          li.style = 'padding: 10px; text-align: left';
+      
           playerOnBoard.appendChild(li); 
         }
       }
