@@ -1,3 +1,5 @@
+// *********************Six essential things in ES6*******************************
+
 // 1. vae let const
 // break up with var
 const numbers = [1.,25,47,666];
@@ -31,3 +33,4 @@ const newAges = [77,88,41,4,...ages];
 // 6. destructuring 
 const {x, y, Z, ...c}={x: 44, Y:12, Z: 52, name: 'Kazi Tanvirul Islam', salary: 52000};
 const [a, b, ...r]=[12,33,56,96,44];
+
