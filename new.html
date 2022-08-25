@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Money Management</h1>
+    <h3>Earnings</h3>
+    <p>Income</p>
+    <input id="income" type="text" placeholder="Income">
+    <h3>Expenses</h3>
+    <p>Rent</p>
+    <input id="rent" type="text" placeholder="Rent">
+    <p>Food</p>
+    <input id="food" type="text" placeholder="Food">
+    <p>Cloths</p>
+    <input id="cloths" type="text" placeholder="Clothes">
+    <p>Savings $<span>000</span></p>
+    <button id="btn-calculation">Calculate</button>
+    <script>
+        // let inputCollection = [];
+        // console.log(inputCollection);
+    function getInputFieldsValue(elementId){
+        const inputElement = document.getElementById(elementId);
+        const inputElementString = inputElement.value;
+        const inputElementAmount = parseFloat(inputElementString);
+        // inputCollection.push(inputElementAmount);
+        return inputElementAmount;
+        console.log(inputElementAmount);
+}
+    document.getElementById('btn-calculation').addEventListener('click', function(){
+        const incomeAmount = getInputFieldsValue('income');
+        const expenseAmountRent = getInputFieldsValue('rent');
+        const expenseAmountFood = getInputFieldsValue('food');
+        const expenseAmountCloths = getInputFieldsValue('cloths');
+        // console.log(incomeAmount, expenseAmountRent, expenseAmountFood, expenseAmountCloths);
+        // console.log(difference);
+        // console.log(typeof incomeAmount);
+    })
+    </script>
+    <script src="new.js"></script>
+</body>
+</html>
