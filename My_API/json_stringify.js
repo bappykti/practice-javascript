@@ -7,6 +7,7 @@ console.log(user);
 console.log(stringified); 
 //{"id":1,"name":"kazi tanvirul islam","job":"web developer"}
 */
+
 const shop = {
     name: "Kazi Tanvirul ISlam",
     address: {
