@@ -9,10 +9,14 @@
 <body>
     <h1>Hello World of Fetch Posts</h1>
     <h2>Display all Posts</h2>
+    <button onclick="createAPost()">Create A Post</button>
+    <button onclick="deleteAPost()">Delete A Post</button>
+    <button onclick="patchAPost()">Update A Post</button>
     <section>
         <h4>All Posts Are here</h4>
+        <button onclick="loadPosts()">Bring Data</button>
         <div id="posts-container">
-            
+
         </div>
     </section>
     <script src="post.js"></script>
