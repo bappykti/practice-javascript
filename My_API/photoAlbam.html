@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 5.2 cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Photo Album API</title>
+</head>
+<body class="container text-center">
+    <div class="mx-auto" style="width: 1240px;">
+        <h1>Your Own Photo Album Using API</h1>
+    <main>
+        <section>
+            <h4>Put Photo ID within 1 to 5000</h4>
+            <input type="text" id="search-input-field" class="form-control mb-3" placeholder="Search photos based on ID">
+            <button onclick="searchPhoto()" class="btn btn-info">Search Photos</button>
+        </section>
+        <section>
+            <h2>Intersting Photos are shown below</h2>
+            <div id="photos-container" class="row row-cols-1 row-cols-md-3 g-4">
+                    
+            </div>
+        </section>
+    </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="photoAlbam.js"></script>
+</body>
+</html>
