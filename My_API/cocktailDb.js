@@ -28,6 +28,18 @@ const displayCocktails = (cocktails) => {
         });    
   
 }
+document.getElementById('all-cocktails').addEventListener('click', function(){
+    // console.log('i am from all cocktails.');
+    loadCocktail("a");
+})
+document.getElementById('m-cocktails').addEventListener('click', function(){
+    // console.log('i am from all cocktails.');
+    loadCocktail("m");
+})
+document.getElementById('c-cocktails').addEventListener('click', function(){
+    // console.log('i am from all cocktails.');
+    loadCocktail("c");
+})
 const searchCocktail = () =>{
     const searchInputField = document.getElementById('search-input-field');
     const searchText = searchInputField.value;
