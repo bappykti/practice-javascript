@@ -1,62 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap 5.2 cdn link  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <title>News Arena</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- tailwind css cdn link  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- daisyui css cdn link  -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <!-- fontawesome kit link   -->
+  <script src="https://kit.fontawesome.com/becd33a2ba.js" crossorigin="becd33a2ba"></script>
+  
+  <title>News Arena</title>
 </head>
-<body class="container text-center py-2">
-    <nav>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">News Arena</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-                <ul id="categories-list" class="d-flex justify-content-end navbar-nav">
-                    <li class="nav-item px-3">1</li>
-                    <li class="nav-item px-3">2</li>
-                    <li class="nav-item px-3">3</li>
-                    <li class="nav-item px-3">4</li>
-                </ul>
-                <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                  <li class="nav-item text-end">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                </ul> -->
-              </div>
-            </div>
-          </nav>
-    </nav>
-    <main class="mx-auto py-3" style="width: 1240px;">
-        <header>
-            <h1> <span class="text-warning">News Arena</span>  is ready for all</h1>
-        </header>
-        <section class="py-4">
-            <h4>Put Your Desire News Catagory</h4>
-            <input type="text" id="search-field" class="form-control mb-3" placeholder="Search Phone">
-            <button class="btn btn-info">Search News</button>
-            <div id="no-phones-found" class="d-none">
-                <h4 class="text-warning my-2">No news found. Please try a new search.</h4>
-            </div>
-        </section>
-        <section>
-            <div>
-                <h2 class="mb-3">All News are here</h2>
-                <div id="newses-container" class="row row-cols-1 row-cols-md-3 g-4">
-                </div>
-            </div>
-        </section>
-    </main>
-     <!-- bootstrap 5.2 javascript cdn link  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="assignment6.js"></script>
+<body>
+  
+  <!-- navbar starts here  -->
+  <header class="container mx-auto">
+    <!-- divider  -->
+    <div class="flex flex-col w-full">
+      <div class="grid h-20 card bg-base-100 rounded-box place-items-center">
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a class="btn btn-ghost normal-case text-xl">News Arena</a>
+          </div>
+          <div class="flex-none">
+            <ul class="menu menu-horizontal p-0">
+              <li><a>News</a></li>
+              <li><a>Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> 
+      <div class="divider"></div> 
+      <div class="grid h-20 card bg-base-300 rounded-box place-items-center">
+        <div class="flex-none">
+          <ul id="categories-navbar" class="menu menu-horizontal p-0">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="w-5/12 mx-auto my-4 flex">
+      <input id="search-field" type="text" placeholder="Type here" class="input input-accent w-full max-w-xs"/>
+      <p class="count-news mx-4">Results found within this category :- <span id="count-news">0</span></p>
+    </section>
+  </header>
+  <!-- modal part -->
+  <section>
+    <!-- The button to open modal -->
+<label for="my-modal-5" class="btn modal-button">open modal</label>
+
+<!-- Put this part before </body> tag -->
+<input type="checkbox" id="my-modal-5" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box w-11/12 max-w-5xl">
+    <h3 class="font-bold text-lg">Congratulations random Internet user!</h3>
+    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+    <div class="modal-action">
+      <label for="my-modal-5" class="btn">Yay!</label>
+    </div>
+  </div>
+</div>
+  </section>
+  <div id="all-news-container" class="container mx-auto">
+    
+  </div>
+
+  <script src="assignment6.js"></script>
 </body>
 </html>

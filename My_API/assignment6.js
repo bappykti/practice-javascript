@@ -1,54 +1,120 @@
 console.log('hello news');
-const loadNews = () => {
-    const url = `https://openapi.programming-hero.com/api/news/categories`
-    fetch (url)
-    .then(res => res.json())
-    .then(news => displayNews(news.data))
+const loadCategoriesMenu = async() => {
+    const url ='https://openapi.programming-hero.com/api/news/categories';
+    const response = await fetch(url);
+    const data = await response.json();
+    const categoriesArray = data.data.news_category;
+    return categoriesArray;
 }
-
-const displayCategories = () => {
-
+const loadAllNews = async() => {
+    const url = `https://openapi.programming-hero.com/api/news/category/01`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const newsArray = data.data;
+    return newsArray;
 }
-const displayNews = (newses) => {
-    console.log(newses);
-    const newsContainer = document.getElementById('newses-container');
-    newsContainer.innerHTML = '';
-    // display 20 phones oonly
-    // phones = phones.slice(0, 20);
-    // No phones found
-    // const noPhonsFound = document.getElementById('no-phones-found');
-    // if(phones.length === 0){
-    //     noPhonsFound.classList.remove("d-none");
-    // }
-    // else{
-    //     noPhonsFound.classList.add("d-none");
-    // }
-    newses.forEach(news => {
-        console.log(news);
+const loadNewsModalById = async(id) => {
+    const url =`https://openapi.programming-hero.com/api/news/${news._id}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+}
+loadNewsModalById();
+// const displayNewsModal = async(news) => {
+//     const displayModal = loadNewsModalById();
+//     console.log(news);
+
+// }
+// const displayNewsDetails = 
+
+loadAllNews();
+
+const setAllCategoriesMenu = async() => {
+    // console.log(loadCategories());
+    // loadCategoriesMenu()
+    // .then(dataArray => console.log(dataArray));
+    const categoriesArray = await loadCategoriesMenu();
+    // console.log(categoriesArray);
+    const categoriesNavbar = document.getElementById('categories-navbar');
+    categoriesArray.forEach(category => {
+        // console.log(category.category_name);
+        const li = document.createElement('li');
+        li.innerHTML = `
+        <li><a>${category.category_name}</a></li>
+        `;
+        categoriesNavbar.appendChild(li);
+    });
+    const newsArray = await loadAllNews();
+    // console.log(newsArray);
+    const allNewsContainer = document.getElementById('all-news-container');
+    newsArray.forEach(news =>{
+        // console.log(news);
+        document.getElementById('count-news').innerText = newsArray.length;
         const newsDiv = document.createElement('div');
-        newsDiv.classList.add('col');
         newsDiv.innerHTML = `
-            <div class="card">
-            <img src="${news.image_url}" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Titel :- ${news.title}</h5>
-            <p class="card-text">Detils :- ${news.details.slice(0, 200) + "..."}</p>
-            <div class = "d-flex">
-                <div>
-                    <img style="width:50px; border-radius:50%;" src="${news.author.img}" class="card-img-top" alt="...">
-                </div>
-                <div>
-                    <p class="card-text">Details :- ${news.author.name}</p>
-                    <p class="card-text">Details :- ${news.author.published_date}</p>
-                </div>
-            </div>
-            <div class = "my-2">
-                <button class="btn btn-info">More Details</button>
+        <div class="p-4 card w-4/6 mx-auto lg:card-side bg-base-100 shadow-xl my-5">
+        <figure><img src="${news.thumbnail_url}" class="h-80" alt="Album"></figure>
+        <div class="card-body">
+          <h2 class="card-title">${news.title}</h2>
+          <p>${news.details.slice(0, 300) + "..."}</p>
+          <div class="card-actions justify-end">
+            <label onclick="loadAllNews()" for="my-modal-5" class="btn btn-success modal-button">open modal</label>
+          </div>
+    <div class="d-flex">
+        <div class="avatar placeholder">
+            <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                <figure><img src="${news.author.img}" class="h-60" alt="Album"></figure>
             </div>
         </div>
+        <div class="flex">
+            <div>
+                <p>${news.author.name ? news.author.name : "No data available"}</p>
+                <p>${news.author.published_date ? news.author.published_date : "No data available"}</p>
+            </div>
+            <div class="mx-20">
+                <span><i class="fa-solid fa-eye"></i> ${news.total_view}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+        </div>
+    </div>
+        
+        </div>
+      </div>
         `;
-        newsContainer.appendChild(newsDiv);
-
-    });    
+        allNewsContainer.appendChild(newsDiv);
+    })
 }
-loadNews();
+setAllCategoriesMenu();
+
+const setAllNews = async() => {
+    // console.log(loadCategories());
+    // loadCategoriesMenu()
+    // .then(dataArray => console.log(dataArray));
+    const newsArray = await loadCategoriesMenu();
+    // console.log(newsArray);
+    const categoriesNavbar = document.getElementById('categories-navbar');
+    categoriesArray.forEach(category => {
+            // console.log(category.category_name);
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <li><a>${category.category_name}</a></li>
+            `;
+            categoriesNavbar.appendChild(li);
+    });
+}
+setAllNews();
+
+ 
+
+const searchField = document.getElementById('search-field');
+searchField.addEventListener("keypress", async(event)=>{
+    if(event.key === "Enter"){
+        console.log(searchField.value);
+    }
+})
