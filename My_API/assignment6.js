@@ -35,7 +35,7 @@ const setAllCategoriesMenu = async() => {
         // console.log(category.category_name);
         const li = document.createElement('li');
         li.innerHTML = `
-        <li><a>${category.category_name}</a></li>
+        <li><a onclick="loadAllNews(category_id)">${category.category_name}</a></li>
         `;
         categoriesNavbar.appendChild(li);
     });
