@@ -13,13 +13,8 @@ const loadAllNews = async() => {
     const newsArray = data.data;
     return newsArray;
 }
-const loadNewsModalById = async(id) => {
-    const url =`https://openapi.programming-hero.com/api/news/${news._id}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-}
-loadNewsModalById();
+
+// loadNewsModalById();
 // const displayNewsModal = async(news) => {
 //     const displayModal = loadNewsModalById();
 //     console.log(news);
@@ -58,7 +53,7 @@ const setAllCategoriesMenu = async() => {
           <h2 class="card-title">${news.title}</h2>
           <p>${news.details.slice(0, 300) + "..."}</p>
           <div class="card-actions justify-end">
-            <label onclick="loadAllNews()" for="my-modal-5" class="btn btn-success modal-button">open modal</label>
+            <label onclick="loadNewsBasedOnId('${news._id}')" for="my-modal-5" class="btn btn-success modal-button">open modal</label>
           </div>
     <div class="d-flex">
         <div class="avatar placeholder">
@@ -118,3 +113,18 @@ searchField.addEventListener("keypress", async(event)=>{
         console.log(searchField.value);
     }
 })
+
+const loadNewsBasedOnId = async(id) => {
+    const url = `https://openapi.programming-hero.com/api/news/${id}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    displayLoadNewsBasedOnId(data.data[0]);
+}
+const displayLoadNewsBasedOnId = news => {
+    // console.log(news);
+    const modalTitle = document.getElementById('modal-title');
+    modalTitle.innerText = news.title;
+    const modalDetails = document.getElementById('modal-details');
+    modalDetails.innerText = news.details;
+
+}
