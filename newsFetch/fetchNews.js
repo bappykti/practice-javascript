@@ -39,7 +39,7 @@ const displayNews = async(newses) =>{
     // console.log(newses);
     const newsContainer = document.getElementById('news-container');
     if(newses.length === 0){
-        document.getElementById('news-quantity').innerText = "No News Found";
+        document.getElementById('news-quantity').innerText = "No Data Found";
     }
     else{
         document.getElementById('news-quantity').innerText = newses.length;
@@ -50,7 +50,7 @@ const displayNews = async(newses) =>{
         const newsDiv = document.createElement('div');
         newsDiv.innerHTML = `
         <div class="card mb-3 p-2 mx-auto border" style="max-width: 1040px;">
-            <div class="row g-5">
+            <div class="row g-3">
                 <div class="col-md-4">
                     <img src="${news.image_url}" class="img-fluid rounded-start h-100" alt="...">
                 </div>  
@@ -58,19 +58,20 @@ const displayNews = async(newses) =>{
                     <div class="card-body">
                         <h5 class="card-title">${news.title}</h5>
                         <p class="card-text">${news.details.slice(0, 300) + '...'}</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                       <div class="d-flex">
+                       <div class="d-flex justify-content-between">
                             <div>
                                 <img src="${news.author.img}" class="img-fluid rounded-circle" alt="..." style="width:50px; height:50px;">
                             </div>
-                            <div class="d-flex flex-column ms-3">
-                                <span>${news.author.name ? news.author.name : "No name"}</span>
-                                <span>${news.author.published_date}</span>
+                        <div class="d-none d-xl-block">
+                            <div class="d-flex flex-column">
+                                <span>${news.author.name ? news.author.name : "No Name"}</span>
+                                <span>${news.author.published_date ? news.author.published_date : "No Data"}</span>
                             </div>
-                            <div class="ms-5">
+                        </div>
+                            <div class="ms-5 d-none d-xl-block">
                                 <i class="fa-regular fa-eye me-1"></i><span>${news.total_view ? news.total_view : "No View"}</span>
                             </div>
-                            <div class="ms-5">
+                            <div class="ms-5 d-none d-md-block">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
