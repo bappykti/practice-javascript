@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- tailwind css cdn link  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- daisyui css cdn link  -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <!-- fontawesome kit link   -->
+  <script src="https://kit.fontawesome.com/becd33a2ba.js" crossorigin="becd33a2ba"></script>
+
+  <title>News Arena</title>
+</head>
+
+<body class="container">
+
+  <!-- header section starts here  -->
+  <header class="w-9/12 mx-auto">
+    <!-- divider  -->
+    <div class="flex flex-col w-full">
+      <div class="grid h-20 card bg-base-100 rounded-box place-items-center">
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a href="index.html" class="btn btn-ghost normal-case text-xl">News Arena</a>
+          </div>
+          <div class="flex-none">
+            <ul class="menu menu-horizontal p-0">
+              <li class="mx-2" onclick="allNews('08')"><a>News</a> </li>
+              <li><a href="blog.html" target="_blank">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="grid h-20 card bg-base-300 rounded-box place-items-center">
+        <div class="flex-none">
+          <ul id="categories-navbar" class="menu menu-horizontal p-0">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="w-6/12 mx-auto my-4">
+      <p class="count-news mx-4 text-xl text-red-900">Click on Navbar above for seeing your desired news </p>
+    </section>
+    <section class="w-5/12 mx-auto my-4">
+      <p class="count-news mx-4 text-xl text-cyan-600">Results found within this category :- <span
+        id="count-news">0</span></p>
+      </section>
+  </header>
+  <!-- header section ends here  -->
+
+  <!-- error section starts here  -->
+  <section>
+    <p id="error-message">
+
+    </p>
+  </section>
+  <!-- error section starts here  -->
+
+  <!-- modal part starts here-->
+  <section>
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box relative">
+        <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+        <h3 id="modal-title" class="text-lg font-bold"></h3>
+        <p id="modal-details" class="py-4"></p>
+        <div id="modal-container">
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- modal part ends here-->
+
+  <!-- spiner section starts here -->
+  <section id="loader" class="hidden">
+    <div class="w-2/12 mx-auto">
+      <progress class="progress w-56"></progress>
+    </div>
+  </section>
+  <!-- spiner section ends here -->
+
+  <!-- news section starts here  -->
+  <section>
+    <div id="news-container" class="container mx-auto">
+    </div>
+  </section>
+  <!-- news section ends here  -->
+  <script src="news.js"></script>
+</body>
+
+</html>

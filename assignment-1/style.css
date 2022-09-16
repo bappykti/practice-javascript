@@ -1,0 +1,234 @@
+/* common css */
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Poppins', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0%;
+    padding: 0%;
+}
+/* css for first section  */
+.first-section{
+    width: 100%;
+    height:70vh;
+    display: table;
+    text-align: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.808)), url(images/donation13.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text-area{
+    padding: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    color: aliceblue;
+}
+.first-heading{
+    font-size: 50px;
+}
+.paragraph{
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+.btn{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #FF5959;
+    border: none;
+    color: aliceblue;
+    font-weight: 500;
+}
+/* css for second section  */
+.second-section{
+    margin: 100px 0;
+}
+.text-area2{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.text-area2 p{
+    color: grey;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.flex-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.donation-amount{
+    background-color: rgba(220, 220, 220, 0.226);
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    padding:  20px 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+}
+#not-common{
+    background-color: #ff595941;
+    color: #FF5959; 
+    border: 2px solid tomato;
+}
+.other-amount{
+    text-align: center;
+    color: grey;
+    font-size: small;
+    margin-top: 50px;
+}
+.other-amount input{
+    text-align: center;
+    border: none;
+}
+.other-amount hr{
+    width: 30%;
+    margin-bottom: 20px;
+}
+/* css for third section  */
+.text-area3{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.text-area3 p{
+    color: grey;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.support{
+    width: 300px;
+    margin: 10px;
+    text-align: left;
+    padding:  20px 20px;
+    border-radius: 5px;
+}
+.support img{
+    margin: 20px 0;
+}
+.support h5{
+    margin-bottom: 10px;
+    color: black;
+    font-size: 18px;
+}
+.support p{
+    color: grey;
+    font-weight: 500;
+}
+.sbg-1{
+    background-color: rgba(175, 238, 238, 0.356);
+}
+.sbg-2{
+    background-color: rgba(255, 192, 203, 0.349);
+}
+.sbg-3{
+    background-color: rgba(255, 255, 0, 0.301);
+}
+/* css for forth section  */
+.text-area4{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 50px ;
+}
+.text-area4 h2{
+    margin-bottom: 25px;
+}
+.text-area4 p{
+    color: grey;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.subscription-form{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.form-area{
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: bisque;
+    padding: 50px;
+}
+.form-area input{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: gainsboro;
+}
+.form-area button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #FF5959;
+    color: aliceblue;
+    margin-left: -10px;
+}
+/* css fro footer  */
+.end-section{
+    background-color:black ;
+    padding: 40px;
+}
+.text-area5{
+    text-align: center;
+}
+.text-area5 h4{
+    font-style: italic;
+    color: #FF5959;
+    font-size: 25px;
+}
+.text-area5 p{
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+}
+/* css for my part  */
+.my-thoughts{
+    margin: 100px 0;
+}
+.my-thoughts h4{
+    margin-bottom: 25px;
+}
+.my-thoughts p{
+    margin-bottom: 25px;
+}
+.my-thought1{
+    background-color: rgba(169, 169, 169, 0.226);
+    width: 460px;
+    height: 350px;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 5px;
+    margin: auto 0;
+    margin-right: 50px;
+}
+.my-thought2{
+    background-color: rgba(255, 166, 0, 0.308);
+    width: 460px;
+    height: 350px;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 5px;
+}
+.my-thought2 img{
+    width: fit-content;
+    height: 20px;
+    margin: auto;
+}
+.my-thought2 span{
+    font-size: 20px;
+}
+.icon{
+    position: relative;
+    top: 5px;
+    bottom: 5px;
+}
+.inner-thoughts{
+    background-color: linen;
+    padding: 10px 10px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
