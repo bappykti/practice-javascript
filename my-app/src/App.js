@@ -3,23 +3,29 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Person></Person>
+      <Person></Person>
+      <h4 className='person'>New Component</h4>
+      <Friend></Friend>
+      
     </div>
   );
 }
-
+function Person(){
+  return (
+    <div className='person'>
+      <h1>Name : Kazi Tanvirul Islam</h1>
+      <h2>Proffesion : Web Developer</h2>
+    </div>
+  )
+}
+function Friend(){
+  return(
+    <div className='person'>
+      <h3>Name : Babu</h3>
+      <p>Proffesion :- Banker</p>
+    </div>
+  )
+}
 export default App;
