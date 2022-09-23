@@ -1,5 +1,5 @@
 {
-  "name": "my-empty-react-project",
+  "name": "my-react-countries-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
