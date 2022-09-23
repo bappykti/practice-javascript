@@ -1,5 +1,5 @@
 .countries-container{
     display: grid;
-    grid-template-columns: repeat(3 1fr);
-    grid-gap: 10px;
+    grid-template-columns: 350px 350px 350px 350px;
+    justify-content: space-around;
 }

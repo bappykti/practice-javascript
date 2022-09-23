@@ -10,19 +10,13 @@ const Countries = () => {
         .then(data => setCountries(data))
     },[])
     return (
-        <div  className='countries-container'>
+        <div>
             <h4>Visiting Countries in the World@@@@!!!!!</h4>
             <h5>Available Countries in the World :- {countries.length}</h5>
-            <div>
-            {
-                countries.map(country => <Country 
-                    country = {country}
-                    // name={country.name.common}
-                    // population={country.population}
-                    // continents={country.continents}
-                    // official={country.name.official}
-                    ></Country>)
-            }
+            <div className = 'countries-container'>
+                {
+                    countries.map(country => <Country country = {country}></Country>)
+                }
             </div>
         </div>
     );
