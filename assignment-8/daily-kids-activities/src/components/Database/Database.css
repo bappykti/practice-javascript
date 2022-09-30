@@ -1,0 +1,14 @@
+.site-body{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    
+}
+.info-box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.side-bar{
+    background-color: aqua;
+    margin-left: 10px;
+}

@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    position: relative;
+}
+.icon{
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    color: #006266;
+    font-size: 30px;
+}
+.club-name{
+    margin-left: 40px;
+}

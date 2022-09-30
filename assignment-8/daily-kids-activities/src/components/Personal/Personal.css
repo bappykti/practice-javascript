@@ -1,0 +1,44 @@
+.my-info{
+    display: flex;
+}
+.info-text h5, p{
+    margin: 0%;
+    padding-top: 5px;
+}
+.info-text p{
+    font-size: 12px;
+}
+.personal img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.btn-break{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    transition: 0.3s;
+    margin: 0 5px;
+}
+.btn-break:hover{
+    background-color: #635DEE;
+}
+.btn-break p{
+    color: black;
+    transition: 0.3s;
+}
+.btn-break:hover p{
+    color: white;
+}
+.background{
+    display: flex;
+    text-align: center;
+    padding: 10px 0;
+}
+.background p{
+    font-size: small;
+    font-weight: bold;
+}
