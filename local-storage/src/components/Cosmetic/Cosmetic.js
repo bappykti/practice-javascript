@@ -1,11 +1,18 @@
 import React from 'react';
-import { addToDb } from '../Utilities/localFakeDb';
+import { addToDb, deleteShoppingCart, removeFromDb } from '../Utilities/localFakeDb';
 import './Cosmetic.css';
 
 const Cosmetic = (props) => {
     const {id, name, price} = props.cosmetic;
     const addToCart = (id) => {
         addToDb(id);
+    }
+    const removeFromCart = (id) => {
+        // console.log("Removing", id);
+        removeFromDb(id);
+    }
+    const deleteFullCart =() => {
+        deleteShoppingCart();
     }
     // rapping the event handler
     // const addToCartWithParams = () => addToCart(id);
@@ -15,6 +22,8 @@ const Cosmetic = (props) => {
             <h4>Product Price :- $ {price}</h4>
             <p>Customer ID :- {id}</p>
             <button onClick={() => addToCart(id)}>Add to Cart</button>
+            <button onClick={() => removeFromCart(id)}>Remove</button>
+            <button onClick={() => deleteFullCart()}>Delete Cart</button>
             {/* <button onClick={addToCartWithParams}>Add to Cart</button> */}
         </div>
     );
